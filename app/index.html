@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title>Firebase + Angular Auth</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+
+  <body ng-controller="AuthCtrl">
+    <h1>Firebase + Angular Auth</h1>
+
+    <!-- LOGIN PANEL -->
+    <div class="panel" ng-hide="authData">
+      <!-- Login button -->
+      <button ng-click="login()">Login With GitHub</button>
+    </div>
+
+    <!-- ACCOUNT PANEL -->
+    <div class="panel" ng-show="authData" >
+      <!-- Logged in user data -->
+      <img ng-src="{{ authData.github.cachedUserProfile.avatar_url }}" />
+      <p>
+        {{ authData.github.displayName }} / <b><a href="{{ authData.github.cachedUserProfile.html_url }}">@{{ authData.github.username }}</a></b>
+      </p>
+
+      <!-- Logout button -->
+      <button ng-click="logout()">Logout</button>
+    </div>
+
+    <!-- REPO LIST -->
+    <div class="panel" ng-show="authData">
+      <h4>Repositories</h4>
+
+      <ul>
+        <li class="list-group-item" ng-repeat="repo in repos">
+          <a href="{{ repo.html_url }}">
+            {{ repo.full_name }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
