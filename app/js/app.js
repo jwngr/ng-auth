@@ -13,13 +13,12 @@ app.controller("AuthCtrl", function($scope, $http, Auth) {
     $scope.authData = authData;
 
     if (authData) {
-      // getRepos();
+      getRepos();
     }
   });
 
   // Logs in a user with GitHub
   $scope.login = function() {
-    console.log('hi')
     Auth.$authWithOAuthPopup("github").catch(function(error) {
       console.error("Error authenticating with GitHub:", error);
     });
