@@ -3,7 +3,7 @@
 
 ### Video
 
-Coming soon!
+Watch my talk [here](https://www.youtube.com/watch?v=EypyCWyQl04).
 
 
 ### Slides
