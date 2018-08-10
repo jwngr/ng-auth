@@ -8,7 +8,7 @@ Watch my talk [here](https://www.youtube.com/watch?v=EypyCWyQl04).
 
 ### Slides
 
-Slides from my presentation are available in the the [`slides`](./slides) directory. They are
+Slides from my presentation are available in the [`slides`](./slides) directory. They are
 available in both [PDF](./slides/authenticationInAngularWithFirebase.pdf) and
 [PowerPoint](./slides/authenticationInAngularWithFirebase.pptx) formats.
 
